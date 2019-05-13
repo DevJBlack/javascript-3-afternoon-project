@@ -40,7 +40,11 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let arr = []
+  for(var key in obj){
+    arr.push(obj[key])
+  }
+  return arr.join('')
 }
 
 
@@ -53,7 +57,15 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function greaterThan10(obj){
+  for(var key in obj){
+    if( obj[key] > 10){
+      obj[key] = 0;
+    }
+    // console.log(obj[key])
+  }
+  return obj
+}
 
 
 
@@ -65,7 +77,13 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function double(obj){
+  for(var key in obj){
+    obj[key] = obj[key] * 2
+  }
+  // console.log(obj)
+  return obj
+}
 
 
 
@@ -80,6 +98,14 @@ function showValues( obj ) {
 */
 
 //Code Here
+function secrets(obj){
+  let strEmp = ''
+  for(var key in obj){
+    if(key.substring(0, 2) === 'sh')
+    strEmp += obj[key]
+  }
+  return strEmp
+}
 
 
 
@@ -110,9 +136,13 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
-
-
+function removePassword(obj){
+  for(var key in obj){
+    if(key === 'password')
+    delete obj[key]
+  }
+  return obj
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -130,8 +160,19 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+function deleteNum(obj){
+  for(var key in obj){
+    if(obj[key] > 100){
+      delete obj[key]
 
+    }
+  }
+  return obj
+}
 
+deleteNum(
+  deleteTheBigNumbers
+)
 
 ////////// PROBLEM 7 //////////
 
